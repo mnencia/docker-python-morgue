@@ -15,7 +15,7 @@ RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 8417157EDBE73D9EAC1E5
 ENV PYTHON_VERSION 2.6.9
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 7.1.0
+ENV PYTHON_PIP_VERSION 9.0.1
 
 RUN set -x \
 	&& mkdir -p /usr/src/python \
@@ -40,4 +40,7 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
 
-CMD ["python2"]
+# install "setuptools_scm" to avoid failures due to https://github.com/pypa/setuptools_scm/issues/209
+RUN pip install --no-cache-dir setuptools_scm
+
+CMD ["python2.6"]
