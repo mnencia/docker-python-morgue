@@ -1,6 +1,6 @@
 # About this Repo
 
-This is the Git repo of a Docker image for Python 2.6. This version of
-python if officially EOL, but it's sometime needed for testing.
+This is the Git repo of a Docker image for Python 2.6 and 2.7. This versions of
+python are officially EOL, but they are sometime needed for testing.
 
-_DONT USE PYTHON 2.6 FOR NEW PROJECTS_
+> **DO NOT USE PYTHON 2.6 OR 2.7 FOR NEW PROJECTS**
